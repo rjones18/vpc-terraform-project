@@ -21,8 +21,6 @@ resource "aws_subnet" "private" {
     vpc_id = aws_vpc.main.id
     cidr_block = "192.168.2.0/24"
     availability_zone = "us-east-1a"
-    map_public_ip_on_launch = false
-
     tags = {
         Name = "talent-academy-private-a"
     }
@@ -32,8 +30,6 @@ resource "aws_subnet" "data" {
     vpc_id = aws_vpc.main.id
     cidr_block = "192.168.3.0/24"
     availability_zone = "us-east-1a"
-    map_public_ip_on_launch = false
-
     tags = {
         Name = "talent-academy-public-a"
     }
@@ -50,7 +46,7 @@ resource "aws_internet_gateway" "igw" {
 
 resource "aws_nat_gateway" "nat_gw" {
   allocation_id = aws_eip.nat_eip.id
-  subnet_id = aws_subnet.private.id
+  subnet_id = aws_subnet.public.id
 
   tags = {
     Name = "talent-academy-nat_gw"
