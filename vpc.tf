@@ -31,7 +31,7 @@ resource "aws_subnet" "data" {
     cidr_block = "192.168.3.0/24"
     availability_zone = "us-east-1a"
     tags = {
-        Name = "talent-academy-public-a"
+        Name = "talent-academy-data-a"
     }
 }
 
