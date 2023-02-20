@@ -1,7 +1,5 @@
 # vpc-terraform-project
 
-I am architecting this project out for my own knowledge.
-
 Link to Website: http://terraform.reggiestestdomain.com (VM Turned Off)
 
 
